@@ -1,4 +1,4 @@
-import { HStack, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Button, HStack, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import logo from "../assets/logo.png";
 
 export default function () {
@@ -6,7 +6,7 @@ export default function () {
     <>
       <HStack spacing={8}>
         <Image src={logo} boxSize="128px" objectFit="cover" />
-        <Stack>
+        <VStack alignItems="flex-start">
           <Heading as="h1" size="2xl" color="orange.900">
             SKILLSPRINT
           </Heading>
@@ -14,7 +14,8 @@ export default function () {
             Уникальная биржа фриланса, созданная специально для разработчиков и
             дизайнеров!
           </Text>
-        </Stack>
+          <Button colorScheme="buttonOrange">Разместить Заказ</Button>
+        </VStack>
       </HStack>
     </>
   );

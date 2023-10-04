@@ -15,7 +15,13 @@ export default function () {
   const { isOpen, onToggle } = useDisclosure();
   return (
     <>
-      <HStack as="header" px="40px" py={2} bg="blue" justify="space-between">
+      <HStack
+        as="header"
+        px="40px"
+        py={2}
+        bg="blue.900"
+        justify="space-between"
+      >
         <HStack as="nav">
           <Image src={logo} boxSize="60px" objectFit="cover" cursor="pointer" />
           <Show below="sm">

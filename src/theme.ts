@@ -9,10 +9,21 @@ const theme = extendTheme({
     },
     fonts: {
         heading: "Visitor TT1 BRK",
-        body: "Ubuntu"
+        body: "Ubuntu",
     },
     colors: {
-        blue: "#091567",
+        blue: {
+            50: 'rgba(9, 21, 103, 1)',
+            100: 'rgba(9, 21, 103, .2)',
+            200: 'rgba(9, 21, 103, .3)',
+            300: 'rgba(9, 21, 103, .4)',
+            400: 'rgba(9, 21, 103, .5)',
+            500: 'rgba(9, 21, 103, .6)',
+            600: 'rgba(9, 21, 103, .7)',
+            700: 'rgba(9, 21, 103, .8)',
+            800: 'rgba(9, 21, 103, .9)',
+            900: 'rgba(9, 21, 103, 1)'
+        },
         orange: {
             50: 'rgba(247, 144, 41, 1)',
             100: 'rgba(247, 144, 41, .2)',
