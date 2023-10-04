@@ -19,7 +19,7 @@ export default function () {
     <>
       <HStack
         as="header"
-        px="40px"
+        px={["20px", "40px"]}
         py={2}
         bg="blue.900"
         justify="space-between"
