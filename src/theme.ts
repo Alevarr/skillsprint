@@ -1,6 +1,16 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
+    textStyles: {
+        h1: {
+            fontSize: "72px",
+            color: "orange.900"
+        }
+    },
+    fonts: {
+        heading: "Visitor TT1 BRK",
+        body: "Ubuntu"
+    },
     colors: {
         blue: "#091567",
         orange: {
@@ -22,8 +32,8 @@ const theme = extendTheme({
             200: 'rgba(247, 144, 41, .3)',
             300: 'rgba(247, 144, 41, .4)',
             400: 'rgba(247, 144, 41, .5)',
-            500: 'rgba(247, 144, 41, 1)',
-            600: 'rgba(247, 144, 41, .9)',
+            500: 'rgba(247, 144, 41, .9)',
+            600: 'rgba(247, 144, 41, 1)',
             700: 'rgba(247, 144, 41, .8)',
             800: 'rgba(247, 144, 41, .9)',
             900: 'rgba(247, 144, 41, 1)'
