@@ -15,6 +15,7 @@ export default () => {
         transition: "transform .15s ease-in",
         cursor: "pointer",
       }}
+      boxShadow="lg"
     >
       <CardHeader>
         <Heading as="h2" size="md" fontFamily="Ubuntu">
