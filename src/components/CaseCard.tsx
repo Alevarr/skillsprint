@@ -31,7 +31,7 @@ export default () => {
       padding={4}
     >
       <Stack direction={{ base: "column", sm: "row" }} justify="space-evenly">
-        <VStack>
+        <VStack justifyContent="center">
           <CgProfile size="40px" />
           <Text as="span" textAlign="center">
             Имя заказчика

@@ -106,6 +106,8 @@ export default () => {
           <CaseCard />
           <CaseCard />
           <CaseCard />
+          <CaseCard />
+          <CaseCard />
         </VStack>
       </GridItem>
     </Grid>
