@@ -44,10 +44,20 @@ export default function () {
             />
           </Show>
           <Show above="sm">
-            <Button variant="ghost" color="white" colorScheme="buttonOrange">
+            <Button
+              variant="ghost"
+              color="white"
+              colorScheme="buttonOrange"
+              onClick={() => navigate("/cases")}
+            >
               Заказы
             </Button>
-            <Button variant="ghost" color="white" colorScheme="buttonOrange">
+            <Button
+              variant="ghost"
+              color="white"
+              colorScheme="buttonOrange"
+              isDisabled
+            >
               Фрилансеры
             </Button>
           </Show>
@@ -81,10 +91,20 @@ export default function () {
           w="100%"
           spacing={2}
         >
-          <Button variant="ghost" color="white" colorScheme="buttonOrange">
+          <Button
+            variant="ghost"
+            color="white"
+            colorScheme="buttonOrange"
+            onClick={() => navigate("/cases")}
+          >
             Заказы
           </Button>
-          <Button variant="ghost" color="white" colorScheme="buttonOrange">
+          <Button
+            variant="ghost"
+            color="white"
+            isDisabled
+            colorScheme="buttonOrange"
+          >
             Фрилансеры
           </Button>
         </ButtonGroup>

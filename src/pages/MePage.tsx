@@ -20,7 +20,7 @@ export default function () {
         area="cases"
         boxShadow="md"
         borderRadius={6}
-        border="1px"
+        // border="1px"
         borderColor="orange.900"
         maxH={{ lg: "calc(100vh - 108px)" }}
         overflowY="scroll"
@@ -41,7 +41,7 @@ export default function () {
         area="aside-upper"
         boxShadow="md"
         borderRadius={6}
-        border="1px"
+        // border="1px"
         borderColor="orange.900"
       >
         <ClientBlock />
@@ -50,7 +50,7 @@ export default function () {
         area="aside-lower"
         boxShadow="md"
         borderRadius={6}
-        border="1px"
+        // border="1px"
         borderColor="orange.900"
         bg="white"
       >
