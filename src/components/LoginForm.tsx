@@ -22,7 +22,12 @@ export default function () {
         />
       </FormControl>
 
-      <Button colorScheme="buttonOrange" type="submit" mt={4}>
+      <Button
+        colorScheme="buttonOrange"
+        type="submit"
+        mt={4}
+        onClick={() => navigate("/me")}
+      >
         Войти
       </Button>
       <Button
