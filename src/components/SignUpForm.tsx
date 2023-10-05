@@ -17,6 +17,7 @@ export default function () {
           placeholder="Email для регистрации"
           focusBorderColor="orange.900"
           borderColor="blue.400"
+          type="email"
         />
       </FormControl>
       <FormControl isRequired>

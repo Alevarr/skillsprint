@@ -12,7 +12,7 @@ export default () => {
   return (
     <Tabs colorScheme="orange" isFitted>
       <TabList>
-        <Tab>Все отлики</Tab>
+        <Tab>Все отклики</Tab>
         <Tab>В работе</Tab>
         <Tab>Завершенные</Tab>
         <Show above="sm">

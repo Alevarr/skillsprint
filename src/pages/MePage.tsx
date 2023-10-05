@@ -18,16 +18,28 @@ export default function () {
     >
       <GridItem
         area="cases"
-        boxShadow="lg"
+        boxShadow="md"
         borderRadius={6}
         border="1px"
         borderColor="orange.900"
+        maxH={{ lg: "calc(100vh - 108px)" }}
+        overflowY="scroll"
+        sx={{
+          "&::-webkit-scrollbar": {
+            width: "10px",
+            borderRadius: "6px",
+            backgroundColor: `rgba(0, 0, 0, 0.05)`,
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: `rgba(0, 0, 0, 0.05)`,
+          },
+        }}
       >
         <ClientCasesBlock />
       </GridItem>
       <GridItem
         area="aside-upper"
-        boxShadow="lg"
+        boxShadow="md"
         borderRadius={6}
         border="1px"
         borderColor="orange.900"
@@ -36,7 +48,7 @@ export default function () {
       </GridItem>
       <GridItem
         area="aside-lower"
-        boxShadow="lg"
+        boxShadow="md"
         borderRadius={6}
         border="1px"
         borderColor="orange.900"

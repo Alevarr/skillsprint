@@ -5,8 +5,10 @@ import {
   Show,
   TabPanels,
   TabPanel,
+  VStack,
 } from "@chakra-ui/react";
 import NoCaseYet from "./NoCaseYet";
+import CaseCard from "./CaseCard";
 
 export default () => {
   return (
@@ -21,7 +23,43 @@ export default () => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <NoCaseYet />
+          <VStack>
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+            <CaseCard />
+          </VStack>
         </TabPanel>
         <TabPanel>
           <NoCaseYet />

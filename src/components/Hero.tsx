@@ -1,5 +1,5 @@
 import { HStack, Heading, Image, Show, Text, VStack } from "@chakra-ui/react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_orange.png";
 import PlaceOrderButton from "./PlaceOrderButton";
 
 export default function () {
