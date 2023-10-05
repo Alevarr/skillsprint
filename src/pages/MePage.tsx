@@ -2,7 +2,6 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import ProfileBlock from "../components/ProfileBlock";
 import ClientBlock from "../components/ClientBlock";
 import ClientCasesBlock from "../components/ClientCasesBlock";
-import FreelancerBlock from "../components/FreelancerBlock";
 
 export default function () {
   return (
