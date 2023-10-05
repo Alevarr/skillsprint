@@ -1,4 +1,4 @@
-import { Stack, FormControl, Input, Button } from "@chakra-ui/react";
+import { Stack, FormControl, Input, Button, Select } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 export default function () {
@@ -29,11 +29,21 @@ export default function () {
       </FormControl>
       <FormControl isRequired>
         <Input
-          placeholder="Пвоторите пароль"
+          placeholder="Повторите пароль"
           type="password"
           focusBorderColor="orange.900"
           borderColor="blue.400"
         />
+      </FormControl>
+      <FormControl isRequired>
+        <Select
+          placeholder="Кто вы?"
+          focusBorderColor="orange.900"
+          borderColor="blue.400"
+        >
+          <option value="customer">Я закачик</option>
+          <option value="freelancer">Я Фрилансер</option>
+        </Select>
       </FormControl>
       <Button colorScheme="buttonOrange" type="submit" mt={4}>
         Зарегистрироваться

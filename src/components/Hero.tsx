@@ -1,13 +1,6 @@
-import {
-  Button,
-  HStack,
-  Heading,
-  Image,
-  Show,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { HStack, Heading, Image, Show, Text, VStack } from "@chakra-ui/react";
 import logo from "../assets/logo.png";
+import PlaceOrderButton from "./PlaceOrderButton";
 
 export default function () {
   return (
@@ -24,7 +17,7 @@ export default function () {
             Уникальная биржа фриланса, созданная специально для разработчиков и
             дизайнеров!
           </Text>
-          <Button colorScheme="buttonOrange">Разместить Заказ</Button>
+          <PlaceOrderButton />
         </VStack>
       </HStack>
     </>
