@@ -19,7 +19,7 @@ export interface FieldProps {
 export default function () {
   const navigate = useNavigate();
   const toast = useToast();
-  const [token, setToken] =
+  const [setToken] =
     useOutletContext<[string | null, (token: string) => void]>();
   return (
     <Formik

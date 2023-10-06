@@ -7,7 +7,7 @@ export default function () {
   const navigate = useNavigate();
   const toast = useToast();
 
-  const [token, setToken] =
+  const [setToken] =
     useOutletContext<[string | null, (token: string) => void]>();
   return (
     <Formik
@@ -45,7 +45,7 @@ export default function () {
         <Form>
           <Stack spacing={4}>
             <Field name="email">
-              {({ field, form }: FieldProps) => (
+              {({ field }: FieldProps) => (
                 <FormControl isRequired>
                   <Input
                     {...field}
@@ -58,7 +58,7 @@ export default function () {
               )}
             </Field>
             <Field name="password">
-              {({ field, form }: FieldProps) => {
+              {({ field }: FieldProps) => {
                 return (
                   <FormControl isRequired>
                     <Input

@@ -6,7 +6,7 @@ import useToken from "../hooks/useToken";
 
 const ErrorPage = () => {
   const error = useRouteError();
-  const [token, setToken] = useToken();
+  const [token] = useToken();
 
   return (
     <>

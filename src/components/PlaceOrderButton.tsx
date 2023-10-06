@@ -62,7 +62,6 @@ export default () => {
                   },
                 });
                 const destination = !token ? "/login" : "/me";
-                console.log(1);
                 navigate(destination);
                 actions.setSubmitting(false);
               }}
@@ -71,7 +70,7 @@ export default () => {
                 <Form>
                   <Stack spacing={4}>
                     <Field name="category" component="select">
-                      {({ field, form }: FieldProps) => (
+                      {({ field }: FieldProps) => (
                         <FormControl isRequired>
                           <Select
                             {...field}
@@ -90,7 +89,7 @@ export default () => {
                       )}
                     </Field>
                     <Field name="title">
-                      {({ field, form }: FieldProps) => (
+                      {({ field }: FieldProps) => (
                         <FormControl isRequired>
                           <Input
                             {...field}
@@ -103,7 +102,7 @@ export default () => {
                       )}
                     </Field>
                     <Field name="description">
-                      {({ field, form }: FieldProps) => (
+                      {({ field }: FieldProps) => (
                         <FormControl isRequired>
                           <Textarea
                             {...field}
@@ -116,7 +115,7 @@ export default () => {
                       )}
                     </Field>
                     <Field name="budget">
-                      {({ field, form }: FieldProps) => (
+                      {({ field }: FieldProps) => (
                         <FormControl isRequired>
                           <NumberInput
                             min={500}
