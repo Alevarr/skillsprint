@@ -30,8 +30,7 @@ export default () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
 
-  const [token, setToken] =
-    useOutletContext<[string | null, (token: string) => void]>();
+  const token = useOutletContext<[string | null, (token: string) => void]>()[0];
 
   return (
     <>

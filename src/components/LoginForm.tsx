@@ -7,8 +7,8 @@ export default function () {
   const navigate = useNavigate();
   const toast = useToast();
 
-  const [setToken] =
-    useOutletContext<[string | null, (token: string) => void]>();
+  const setToken =
+    useOutletContext<[string | null, (token: string) => void]>()[1];
   return (
     <Formik
       initialValues={{
