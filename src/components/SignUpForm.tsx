@@ -5,16 +5,22 @@ import {
   Button,
   Select,
   FormErrorMessage,
+  useToast,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
+import ApiClient from "../services/api-client";
 
 interface FieldProps {
   field: any;
   form: any;
 }
+
 export default function () {
   const navigate = useNavigate();
+  const toast = useToast();
+  const [token, setToken] =
+    useOutletContext<[string | null, (token: string) => void]>();
   return (
     <Formik
       initialValues={{
@@ -24,8 +30,34 @@ export default function () {
         repeatPassword: "",
         role: "",
       }}
+      validate={(values) => {
+        if (values.password !== values.repeatPassword)
+          return { password: "Пароли не совпадают" };
+      }}
       onSubmit={(values, actions) => {
-        alert(JSON.stringify(values, null, 2));
+        ApiClient.signUpUser({
+          params: {
+            email: values.email,
+            name: values.name,
+            password: values.password,
+            role: values.role,
+          },
+        })
+          .then((res) => {
+            const tokenReceived = res.data["x-auth-token"];
+            setToken(tokenReceived);
+            navigate("/me");
+          })
+          .catch((res) => {
+            res = res.response;
+            toast({
+              title: "Ошибка",
+              description: res?.data,
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            });
+          });
         actions.setSubmitting(false);
       }}
     >
@@ -66,21 +98,23 @@ export default function () {
               )}
             </Field>
             <Field name="password">
-              {({ field, form }: FieldProps) => (
-                <FormControl
-                  isRequired
-                  isInvalid={form.errors.name && form.touched.name}
-                >
-                  <Input
-                    {...field}
-                    placeholder="Надежный пароль"
-                    type="password"
-                    focusBorderColor="orange.900"
-                    borderColor="blue.400"
-                  />
-                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                </FormControl>
-              )}
+              {({ field, form }: FieldProps) => {
+                return (
+                  <FormControl
+                    isRequired
+                    isInvalid={form.errors.password && form.touched.password}
+                  >
+                    <Input
+                      {...field}
+                      placeholder="Надежный пароль"
+                      type="password"
+                      focusBorderColor="orange.900"
+                      borderColor="blue.400"
+                    />
+                    <FormErrorMessage>{form.errors.password}</FormErrorMessage>
+                  </FormControl>
+                );
+              }}
             </Field>
             <Field name="repeatPassword">
               {({ field, form }: FieldProps) => (

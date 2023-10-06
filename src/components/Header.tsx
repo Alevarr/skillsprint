@@ -10,9 +10,13 @@ import {
   Image,
 } from "@chakra-ui/react";
 import logo from "../assets/logo.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
-export default function () {
+interface Props {
+  token: string | null;
+}
+
+export default function ({ token }: Props) {
   const { isOpen, onToggle } = useDisclosure();
   const navigate = useNavigate();
   return (
@@ -63,22 +67,30 @@ export default function () {
           </Show>
         </HStack>
         <HStack>
-          <Button
-            variant="link"
-            p={2}
-            color="white"
-            _focus={{ color: "white" }}
-            colorScheme="buttonOrange"
-            onClick={() => navigate("/login")}
-          >
-            Вход
-          </Button>
-          <Button
-            colorScheme="buttonOrange"
-            onClick={() => navigate("/signup")}
-          >
-            Регистрация
-          </Button>
+          {!token ? (
+            <>
+              <Button
+                variant="link"
+                p={2}
+                color="white"
+                _focus={{ color: "white" }}
+                colorScheme="buttonOrange"
+                onClick={() => navigate("/login")}
+              >
+                Вход
+              </Button>
+              <Button
+                colorScheme="buttonOrange"
+                onClick={() => navigate("/signup")}
+              >
+                Регистрация
+              </Button>{" "}
+            </>
+          ) : (
+            <Button colorScheme="buttonOrange" onClick={() => navigate("/me")}>
+              Личный кабинет
+            </Button>
+          )}
         </HStack>
       </HStack>
       <Collapse in={isOpen} animateOpacity>
