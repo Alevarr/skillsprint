@@ -61,18 +61,18 @@ export default () => {
                     category: values.category,
                   },
                 });
+                const destination = !token ? "/login" : "/me";
+                console.log(1);
+                navigate(destination);
                 actions.setSubmitting(false);
               }}
             >
-              {(props) => (
+              {() => (
                 <Form>
                   <Stack spacing={4}>
                     <Field name="category" component="select">
                       {({ field, form }: FieldProps) => (
-                        <FormControl
-                          isRequired
-                          isInvalid={form.errors.name && form.touched.name}
-                        >
+                        <FormControl isRequired>
                           <Select
                             {...field}
                             placeholder="Выберите категорию"
@@ -85,54 +85,39 @@ export default () => {
                               </option>
                             ))}
                           </Select>
-                          <FormErrorMessage>
-                            {form.errors.name}
-                          </FormErrorMessage>
+                          <FormErrorMessage></FormErrorMessage>
                         </FormControl>
                       )}
                     </Field>
                     <Field name="title">
                       {({ field, form }: FieldProps) => (
-                        <FormControl
-                          isRequired
-                          isInvalid={form.errors.name && form.touched.name}
-                        >
+                        <FormControl isRequired>
                           <Input
                             {...field}
                             placeholder="Название заказа..."
                             focusBorderColor="orange.900"
                             borderColor="blue.400"
                           />
-                          <FormErrorMessage>
-                            {form.errors.name}
-                          </FormErrorMessage>
+                          <FormErrorMessage></FormErrorMessage>
                         </FormControl>
                       )}
                     </Field>
                     <Field name="description">
                       {({ field, form }: FieldProps) => (
-                        <FormControl
-                          isRequired
-                          isInvalid={form.errors.name && form.touched.name}
-                        >
+                        <FormControl isRequired>
                           <Textarea
                             {...field}
                             placeholder="Описание заказа..."
                             focusBorderColor="orange.900"
                             borderColor="blue.400"
                           />
-                          <FormErrorMessage>
-                            {form.errors.name}
-                          </FormErrorMessage>
+                          <FormErrorMessage></FormErrorMessage>
                         </FormControl>
                       )}
                     </Field>
                     <Field name="budget">
                       {({ field, form }: FieldProps) => (
-                        <FormControl
-                          isRequired
-                          isInvalid={form.errors.name && form.touched.name}
-                        >
+                        <FormControl isRequired>
                           <NumberInput
                             min={500}
                             step={100}
@@ -148,20 +133,12 @@ export default () => {
                               <NumberDecrementStepper />
                             </NumberInputStepper>
                           </NumberInput>
-                          <FormErrorMessage>
-                            {form.errors.name}
-                          </FormErrorMessage>
+                          <FormErrorMessage></FormErrorMessage>
                         </FormControl>
                       )}
                     </Field>
 
-                    <Button
-                      colorScheme="buttonOrange"
-                      type="submit"
-                      onClick={() => {
-                        !token ? navigate("/login") : navigate("/me");
-                      }}
-                    >
+                    <Button colorScheme="buttonOrange" type="submit">
                       Добавить
                     </Button>
                   </Stack>

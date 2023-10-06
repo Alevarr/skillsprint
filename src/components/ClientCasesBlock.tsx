@@ -8,7 +8,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import NoCaseYet from "./NoCaseYet";
-import CaseCard from "./CaseCard";
 import CasesList from "./CasesList";
 
 export default () => {

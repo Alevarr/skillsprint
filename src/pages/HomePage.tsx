@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 function HomePage() {
   return (
     <>
-      <VStack p="40px" bg="orange.100" spacing="40px">
+      <VStack p="40px" bg="orange.50" spacing="40px">
         <Hero />
         <CategoriesGrid />
       </VStack>

@@ -1,9 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import User from "../entities/User";
 import Cookies from 'universal-cookie'
-import { toMs } from "ms-typescript";
-import { useToast } from "@chakra-ui/react";
-import useToken from "../hooks/useToken";
 
 export interface FetchResponse<T> {
     count: number;
@@ -19,7 +15,7 @@ export interface FetchResponse<T> {
 }
 
 const clientInstance = axios.create({
-    baseURL: "http://localhost:8080/api/",
+    baseURL: "http://185.20.227.120:8080/api/",
     headers: {
         "x-auth-token": getToken()
     }

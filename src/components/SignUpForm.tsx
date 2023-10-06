@@ -62,7 +62,7 @@ export default function () {
         actions.setSubmitting(false);
       }}
     >
-      {(props) => (
+      {() => (
         <Form>
           <Stack spacing={4}>
             <Field name="name">
@@ -146,7 +146,7 @@ export default function () {
                     focusBorderColor="orange.900"
                     borderColor="blue.400"
                   >
-                    <option value="customer">Я закачик</option>
+                    <option value="customer">Я заказчик</option>
                     <option value="freelancer">Я Фрилансер</option>
                   </Select>
                   <FormErrorMessage>{form.errors.name}</FormErrorMessage>

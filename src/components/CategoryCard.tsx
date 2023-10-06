@@ -6,8 +6,18 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
+import Category from "../entities/Category";
+import useCaseQueryStore from "../store";
+import { useNavigate } from "react-router-dom";
 
-export default () => {
+interface Props {
+  category: Category;
+}
+
+export default ({ category }: Props) => {
+  const navigate = useNavigate();
+  const setCategory = useCaseQueryStore((state) => state.setCategory);
+
   return (
     <Card
       _hover={{
@@ -16,10 +26,14 @@ export default () => {
         cursor: "pointer",
       }}
       boxShadow="lg"
+      onClick={() => {
+        setCategory(category);
+        navigate("/cases");
+      }}
     >
       <CardHeader>
         <Heading as="h2" size="md" fontFamily="Ubuntu">
-          Название категории
+          {category.name}
         </Heading>
       </CardHeader>
       <CardBody>

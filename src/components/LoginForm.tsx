@@ -1,11 +1,4 @@
-import {
-  Stack,
-  FormControl,
-  Input,
-  Button,
-  FormErrorMessage,
-  useToast,
-} from "@chakra-ui/react";
+import { Stack, FormControl, Input, Button, useToast } from "@chakra-ui/react";
 import { Formik, Field, FieldProps, Form } from "formik";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import ApiClient from "../services/api-client";
@@ -48,15 +41,12 @@ export default function () {
         actions.setSubmitting(false);
       }}
     >
-      {(props) => (
+      {() => (
         <Form>
           <Stack spacing={4}>
             <Field name="email">
               {({ field, form }: FieldProps) => (
-                <FormControl
-                  isRequired
-                  isInvalid={form.errors.name && form.touched.name}
-                >
+                <FormControl isRequired>
                   <Input
                     {...field}
                     placeholder="Email для входа"
@@ -64,17 +54,13 @@ export default function () {
                     borderColor="blue.400"
                     type="email"
                   />
-                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                 </FormControl>
               )}
             </Field>
             <Field name="password">
               {({ field, form }: FieldProps) => {
                 return (
-                  <FormControl
-                    isRequired
-                    isInvalid={form.errors.password && form.touched.password}
-                  >
+                  <FormControl isRequired>
                     <Input
                       {...field}
                       placeholder="Пароль"
@@ -82,7 +68,6 @@ export default function () {
                       focusBorderColor="orange.900"
                       borderColor="blue.400"
                     />
-                    <FormErrorMessage>{form.errors.password}</FormErrorMessage>
                   </FormControl>
                 );
               }}

@@ -1,19 +1,5 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Grid,
-  GridItem,
-  HStack,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  Select,
-  Stack,
-  VStack,
-} from "@chakra-ui/react";
-import CaseCard from "../components/CaseCard";
-import CasesFilters from "../components/CasesFIlters";
+import { Grid, GridItem, VStack } from "@chakra-ui/react";
+import CasesFilters from "../components/CasesFilters";
 import CasesList from "../components/CasesList";
 
 export default () => {

@@ -48,27 +48,16 @@ export default ({ caseObject, isLoading }: Props) => {
             </Text>
             <RatingBadge rating={4.5} />
           </VStack>
-          <VStack align="flex-start" maxW={{ sm: "70%" }}>
+          <VStack align="flex-start" maxW={{ sm: "70%" }} minW="70%">
             <CardHeader py={0}>
               <Heading fontFamily="Ubuntu" fontSize="lg">
-                Название заказа
+                {caseObject.title}
               </Heading>
             </CardHeader>
             <CardBody py={0}>
               <Flex justify="space-between" align="flex-end">
                 <VStack align="flex-start">
-                  <Text noOfLines={2}>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ip
-                  </Text>
+                  <Text noOfLines={2}>{caseObject.description}</Text>
                   <HStack spacing={2}>
                     <HStack spacing={1}>
                       <AiOutlineClockCircle />
@@ -80,7 +69,7 @@ export default ({ caseObject, isLoading }: Props) => {
                     </HStack>
                   </HStack>
                   <Badge colorScheme="orange" borderRadius={6} p={2}>
-                    Дизайн
+                    {caseObject.category.name}
                   </Badge>
                 </VStack>
               </Flex>
