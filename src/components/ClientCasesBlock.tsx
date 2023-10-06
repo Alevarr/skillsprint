@@ -25,40 +25,6 @@ export default () => {
         <TabPanel>
           <VStack>
             <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
-            <CaseCard />
           </VStack>
         </TabPanel>
         <TabPanel>

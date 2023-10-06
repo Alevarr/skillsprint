@@ -13,6 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import CaseCard from "../components/CaseCard";
+import categories from "../categories";
 
 export default () => {
   return (
@@ -48,9 +49,9 @@ export default () => {
               focusBorderColor="orange.900"
               borderColor="blue.400"
             >
-              <option value="customer">Дизайн</option>
-              <option value="freelancer">Фронт</option>
-              <option value="freelancer">Бек</option>
+              {categories.map((category) => (
+                <option value={category.slug}>{category.name}</option>
+              ))}
             </Select>
           </FormControl>
           <FormControl>

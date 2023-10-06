@@ -2,6 +2,8 @@ import axios, { AxiosRequestConfig } from "axios";
 import User from "../entities/User";
 import Cookies from 'universal-cookie'
 import { toMs } from "ms-typescript";
+import { useToast } from "@chakra-ui/react";
+import useToken from "../hooks/useToken";
 
 export interface FetchResponse<T> {
     count: number;
@@ -9,8 +11,18 @@ export interface FetchResponse<T> {
     results: T[];
   }
 
+  const getToken = () => {
+    const cookies = new Cookies();
+    const token = cookies.get("skillsprint_auth_token")
+    return token;
+
+}
+
 const clientInstance = axios.create({
     baseURL: "http://localhost:8080/api/",
+    headers: {
+        "x-auth-token": getToken()
+    }
 })
 
 class ApiClient<T> {
@@ -21,7 +33,9 @@ class ApiClient<T> {
     getAll = (config?: AxiosRequestConfig) => clientInstance.get<FetchResponse<T>>(this.endpoint, config).then(res => res.data);
     getSingle = (config?: AxiosRequestConfig) => clientInstance.get<T>(this.endpoint, config).then(res => res.data);
     post = (config?: AxiosRequestConfig) => clientInstance.post<T>(this.endpoint, config).then(res => res.data);
+    postSingle = (config?: AxiosRequestConfig) => clientInstance.post<T>(this.endpoint, config).then(res => res.data);
     static signUpUser = (config?: AxiosRequestConfig) => clientInstance.post<{"x-auth-token": string}>("/users", config);
+    static loginUser = (config?: AxiosRequestConfig) => clientInstance.post<{"x-auth-token": string}>("/auth", config);
 }
 
 export default ApiClient;

@@ -6,7 +6,8 @@ export default () : [string | null, (token: string) => void] => {
     const [token, setCookie] = useState<string | null>(cookies.get("skillsprint_auth_token"));
     const setToken = (token: string) => {
         cookies.set("skillsprint_auth_token", token);
-        setCookie(token)
+        setCookie(token);
+
     }
     return [token, setToken];
 }

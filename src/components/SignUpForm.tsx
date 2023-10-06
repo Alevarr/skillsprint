@@ -11,7 +11,7 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import ApiClient from "../services/api-client";
 
-interface FieldProps {
+export interface FieldProps {
   field: any;
   form: any;
 }
@@ -47,6 +47,7 @@ export default function () {
             const tokenReceived = res.data["x-auth-token"];
             setToken(tokenReceived);
             navigate("/me");
+            window.location.reload();
           })
           .catch((res) => {
             res = res.response;
