@@ -24,9 +24,14 @@ import { Field, FieldProps, Form, Formik } from "formik";
 import ApiClient from "../services/api-client";
 import Case from "../entities/Case";
 import categories from "../categories";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+
+  const [token, setToken] =
+    useOutletContext<[string | null, (token: string) => void]>();
 
   return (
     <>
@@ -150,7 +155,13 @@ export default () => {
                       )}
                     </Field>
 
-                    <Button colorScheme="buttonOrange" type="submit">
+                    <Button
+                      colorScheme="buttonOrange"
+                      type="submit"
+                      onClick={() => {
+                        !token ? navigate("/login") : navigate("/me");
+                      }}
+                    >
                       Добавить
                     </Button>
                   </Stack>

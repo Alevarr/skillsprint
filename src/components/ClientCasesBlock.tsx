@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import NoCaseYet from "./NoCaseYet";
 import CaseCard from "./CaseCard";
+import CasesList from "./CasesList";
 
 export default () => {
   return (
@@ -24,7 +25,7 @@ export default () => {
       <TabPanels>
         <TabPanel>
           <VStack>
-            <CaseCard />
+            <CasesList></CasesList>
           </VStack>
         </TabPanel>
         <TabPanel>

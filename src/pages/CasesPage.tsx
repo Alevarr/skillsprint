@@ -13,7 +13,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import CaseCard from "../components/CaseCard";
-import categories from "../categories";
+import CasesFilters from "../components/CasesFIlters";
+import CasesList from "../components/CasesList";
 
 export default () => {
   return (
@@ -39,49 +40,7 @@ export default () => {
         borderColor="orange.900"
         p={4}
       >
-        <Stack as="form" spacing={4}>
-          <FormControl>
-            <FormLabel fontSize="md" fontFamily="Ubuntu" mb={3}>
-              Категория
-            </FormLabel>
-            <Select
-              placeholder="Выбирете категорию..."
-              focusBorderColor="orange.900"
-              borderColor="blue.400"
-            >
-              {categories.map((category) => (
-                <option value={category.slug}>{category.name}</option>
-              ))}
-            </Select>
-          </FormControl>
-          <FormControl>
-            <FormLabel fontSize="md" fontFamily="Ubuntu" mb={3}>
-              Бюджет
-            </FormLabel>
-            <HStack>
-              <NumberInput
-                min={0}
-                focusBorderColor="orange.900"
-                borderColor="blue.400"
-              >
-                <NumberInputField placeholder="От" />
-                <NumberInputStepper></NumberInputStepper>
-              </NumberInput>
-              <NumberInput
-                min={500}
-                step={100}
-                focusBorderColor="orange.900"
-                borderColor="blue.400"
-              >
-                <NumberInputField placeholder="До" />
-                <NumberInputStepper></NumberInputStepper>
-              </NumberInput>
-            </HStack>
-          </FormControl>
-          <Button colorScheme="buttonOrange" type="submit">
-            Применить фильтры
-          </Button>
-        </Stack>
+        <CasesFilters />
       </GridItem>
       <GridItem
         area="main"
@@ -104,11 +63,8 @@ export default () => {
         maxH={{ lg: "calc(100vh - 108px)" }}
       >
         <VStack>
-          <CaseCard />
-          <CaseCard />
-          <CaseCard />
-          <CaseCard />
-          <CaseCard />
+          <CasesList />
+          {/* <CaseCard /> */}
         </VStack>
       </GridItem>
     </Grid>

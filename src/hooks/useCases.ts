@@ -13,9 +13,9 @@ const useCases = () => {
     queryKey: ["cases", {...caseQuery, category: caseQuery.category, budgerRange: caseQuery.budgetRange, status: caseQuery.status}],
     queryFn: () => apiClient.getAll({params: 
       {
-        category: caseQuery.category?.id,
-        budgetRange: caseQuery.budgetRange,
-        status: caseQuery.status
+        category: caseQuery.category?.slug,
+        // budgetRange: caseQuery.budgetRange,
+        // status: caseQuery.status
       }
     }),
     staleTime: toMs("24h")
